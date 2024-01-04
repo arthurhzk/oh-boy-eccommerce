@@ -1,29 +1,52 @@
 import { createRouter, createWebHistory } from "vue-router";
-
+import { RouteNameEnum, RoutePathEnum } from "@/domain/enums/routeEnums";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
-      name: "Home",
+      path: RoutePathEnum.HOME,
+      name: RouteNameEnum.HOME,
       component: () => import("@/views/HomeView.vue"),
     },
     {
-      path: "/about",
-      name: "About",
+      path: RoutePathEnum.ABOUT,
+      name: RouteNameEnum.ABOUT,
       component: () => import("@/views/AboutView.vue"),
+      meta: {
+        title: "Sobre a Oh, Boy!",
+      },
     },
     {
-      path: "/contact",
-      name: "Contact",
+      path: RoutePathEnum.CONTACT,
+      name: RouteNameEnum.CONTACT,
       component: () => import("@/views/ContactView.vue"),
+      meta: {
+        title: "Contato Oh, Boy!",
+      },
     },
     {
-      path: "/product/:id",
-      name: "Shirt",
+      path: RoutePathEnum.PRODUCTID,
+      name: RouteNameEnum.PRODUCTID,
       component: () => import("@/views/SingleProductView.vue"),
+      meta: {
+        title: "Camiseta",
+      },
+    },
+    {
+      path: RoutePathEnum.LOGIN,
+      name: RouteNameEnum.LOGIN,
+      component: () => import("@/views/LoginView.vue"),
+    },
+    {
+      path: RoutePathEnum.REGISTER,
+      name: RouteNameEnum.REGISTER,
+      component: () => import("@/views/RegisterView.vue"),
     },
   ],
+});
+router.beforeEach((to, _from, next) => {
+  document.title = (to.meta?.title || "Oh Boy | Since 2024").toString();
+  next();
 });
 
 export default router;

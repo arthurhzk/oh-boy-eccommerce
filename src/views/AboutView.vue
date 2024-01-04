@@ -15,7 +15,7 @@
         </p>
         <InputLabel label="Name" type="text" />
         <InputLabel label="Email" type="email" />
-        <InputLabel label="Mensagem" type="text" />
+        <TextLabel label="Mensagem" placeholder="Digite a sua mensagem..." />
         <InputCheck text="Eu aceito os termos" />
         <div class="flex gap-6">
           <Button variant="default">Enviar</Button>
@@ -62,7 +62,7 @@ import RelumeIcon from "@/assets/icons/partner-icons/RelumeIcon.vue";
 import WebFlow from "@/assets/icons/partner-icons/WebFlow.vue";
 import serviceLinks from "@/data/serviceLinks";
 import Loader from "@/components/ui/loader/Loader.vue";
+import TextLabel from "@/layout/text-label/TextLabel.vue";
 import { useLoader } from "@/composables/useLoader";
 const { isLoading } = useLoader();
-console.log(isLoading);
 </script>

@@ -1,4 +1,5 @@
 <template>
+  <Loader v-show="isloading" class="flex items-center justify-center" />
   <HomeContainer class="mt-[120px] mb-[120pb]">
     <div class="mt-24" v-for="item in product">
       <BreadCrumb class="mb-8" :title="item.title" />
@@ -20,13 +21,19 @@
               {{ item.description }}
             </p>
             <InputLabel label="Quantidade" type="number" />
-            <Button variant="default">Adicionar ao Carrinho</Button>
+            <AddToaster
+              variant="default"
+              text="Comprar"
+              description="Produto adicionado ao carrinho!"
+            />
+
             <ProductAccordion />
           </div>
         </div>
       </div>
     </div>
   </HomeContainer>
+
   <Newsletter class="mt-[120px]" />
 </template>
 
@@ -35,15 +42,20 @@ import HomeContainer from "@/components/ui/container/HomeContainer.vue";
 import BreadCrumb from "@/layout/bread-crumb/BreadCrumb.vue";
 import { useFetchProductId } from "@/composables/useFetchProductId";
 import { useRouter } from "vue-router";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import InputLabel from "@/layout/input-label/InputLabel.vue";
-import Button from "@/components/ui/button/Button.vue";
 import ProductAccordion from "@/layout/product-accordion/ProductAccordion.vue";
 import Newsletter from "@/layout/newsletter/Newsletter.vue";
+import Loader from "@/components/ui/loader/Loader.vue";
+import AddToaster from "@/layout/add-toaster/AddToaster.vue";
+
 const router = useRouter();
 const { fetchProductId, product } = useFetchProductId();
 const productId = router.currentRoute.value.params.id;
+const isloading = ref(true);
 onMounted(async () => {
+  isloading.value = true;
   await fetchProductId(productId);
+  isloading.value = false;
 });
 </script>

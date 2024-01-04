@@ -1,10 +1,4 @@
-interface serviceData {
-  id?: number;
-  icon?: string;
-  title?: string;
-  description?: string;
-  content?: string;
-}
+import { serviceData } from "@/domain/types/serviceData";
 
 const serviceLinks: serviceData[] = [
   {
