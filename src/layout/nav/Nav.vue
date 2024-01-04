@@ -13,11 +13,18 @@
             </NavigationMenuLink>
           </router-link>
         </div>
-        <router-link :to="RoutePathEnum.REGISTER">
-          <Button variant="default">Cadastrar</Button></router-link
-        >
-        <router-link :to="RoutePathEnum.LOGIN">
-          <Button variant="outline">Acessar</Button></router-link
+        <div class="flex gap-6" v-if="!store.isLoggedIn">
+          <router-link :to="RoutePathEnum.REGISTER">
+            <Button variant="default">Cadastrar</Button></router-link
+          >
+          <router-link :to="RoutePathEnum.LOGIN">
+            <Button variant="outline">Acessar</Button></router-link
+          >
+        </div>
+        <router-link v-else :to="RoutePathEnum.HOME">
+          <Button @click="store.signOutuser" variant="default"
+            >Finalizar</Button
+          ></router-link
         >
       </div>
     </div>
@@ -30,4 +37,6 @@ import HomeContainer from "@/components/ui/container/HomeContainer.vue";
 import Button from "@/components/ui/button/Button.vue";
 import navLinks from "@/data/navLinks";
 import { RoutePathEnum } from "@/domain/enums/routeEnums";
+import { useUserStore } from "@/stores/users";
+const store = useUserStore();
 </script>

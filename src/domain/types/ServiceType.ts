@@ -1,4 +1,4 @@
-export interface serviceData {
+export interface ServiceType {
   id?: number;
   icon?: string;
   title?: string;

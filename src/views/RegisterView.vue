@@ -11,6 +11,7 @@ import {
 import Input from "@/components/ui/input/Input.vue";
 import Label from "@/components/ui/label/Label.vue";
 import Loader from "@/components/ui/loader/Loader.vue";
+import { useRegister } from "@/composables/useRegister";
 import { ref } from "vue";
 const isLoading = ref(false);
 async function onSubmit(event: Event) {
@@ -21,6 +22,8 @@ async function onSubmit(event: Event) {
     isLoading.value = false;
   }, 3000);
 }
+
+const { state, signUpUser } = useRegister();
 </script>
 
 <template>
@@ -48,7 +51,7 @@ async function onSubmit(event: Event) {
           </div>
           <div class="relative">
             <div class="absolute inset-0 flex items-center">
-              <span class="w-full border-t" />
+              <span class="w-full border-t"></span>
             </div>
             <div class="relative flex justify-center text-xs uppercase">
               <span class="bg-background px-2 text-muted-foreground">
@@ -56,17 +59,27 @@ async function onSubmit(event: Event) {
               </span>
             </div>
           </div>
+
           <div class="grid gap-2">
             <Label for="email">Email</Label>
-            <Input id="email" type="email" placeholder="m@example.com" />
+            <Input
+              v-model:modelValue="state.email"
+              id="email"
+              type="email"
+              placeholder="ohboy@email.com"
+            />
           </div>
           <div class="grid gap-2">
             <Label for="password">Senha</Label>
-            <Input id="password" type="password" />
+            <Input
+              v-model:modelValue="state.password"
+              id="password"
+              type="password"
+            />
           </div>
         </CardContent>
         <CardFooter>
-          <Button class="w-full">
+          <Button @click="signUpUser" class="w-full">
             Criar conta <Loader class="ml-4" v-if="isLoading" />
           </Button>
         </CardFooter>

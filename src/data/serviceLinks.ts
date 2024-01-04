@@ -1,6 +1,6 @@
-import { serviceData } from "@/domain/types/serviceData";
+import { ServiceType } from "@/domain/types/ServiceType";
 
-const serviceLinks: serviceData[] = [
+const serviceLinks: ServiceType[] = [
   {
     id: 1,
     icon: "src/assets/icons/service-icons/EmailIcon.svg",

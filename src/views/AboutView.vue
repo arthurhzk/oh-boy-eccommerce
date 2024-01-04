@@ -18,7 +18,11 @@
         <TextLabel label="Mensagem" placeholder="Digite a sua mensagem..." />
         <InputCheck text="Eu aceito os termos" />
         <div class="flex gap-6">
-          <Button variant="default">Enviar</Button>
+          <AddToaster
+            variant="default"
+            text="Enviar"
+            description="Mensagem enviada com sucesso! Entraremos em contato assim que possível"
+          ></AddToaster>
         </div>
       </HomeContainer>
       <Loader v-if="isLoading" />
@@ -53,7 +57,6 @@
 
 <script setup lang="ts">
 import HomeContainer from "@/components/ui/container/HomeContainer.vue";
-import Button from "@/components/ui/button/Button.vue";
 import InputLabel from "@/layout/input-label/InputLabel.vue";
 import InputCheck from "@/layout/input-checkbox/InputCheck.vue";
 import ServiceCard from "@/layout/service-card/ServiceCard.vue";
@@ -64,5 +67,6 @@ import serviceLinks from "@/data/serviceLinks";
 import Loader from "@/components/ui/loader/Loader.vue";
 import TextLabel from "@/layout/text-label/TextLabel.vue";
 import { useLoader } from "@/composables/useLoader";
+import AddToaster from "@/layout/add-toaster/AddToaster.vue";
 const { isLoading } = useLoader();
 </script>
