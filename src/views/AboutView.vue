@@ -1,7 +1,6 @@
 <template>
   <section>
-    <div class="flex flex-row-reverse p-4">
-      <Map></Map>
+    <div class="flex p-4">
       <HomeContainer class="w-1/2 h-[900px] flex flex-col space-y-6">
         <h1
           class="scroll-m-20 text-4xl font-semibold tracking-tight lg:text-5xl"
@@ -22,6 +21,8 @@
           <Button variant="default">Enviar</Button>
         </div>
       </HomeContainer>
+      <Loader v-if="isLoading" />
+      <Map v-else></Map>
     </div>
     <HomeContainer>
       <div class="flex items-center justify-between">
@@ -39,7 +40,12 @@
     </HomeContainer>
     <HomeContainer class="mt-[120px] mb-[120px]">
       <div class="flex justify-around">
-        <ServiceCard v-for=" in 4" />
+        <ServiceCard
+          v-for="(product, index) in serviceLinks"
+          :key="index"
+          :product="product"
+          :icon="product.icon"
+        />
       </div>
     </HomeContainer>
   </section>
@@ -54,4 +60,9 @@ import ServiceCard from "@/layout/service-card/ServiceCard.vue";
 import Map from "@/layout/map/Map.vue";
 import RelumeIcon from "@/assets/icons/partner-icons/RelumeIcon.vue";
 import WebFlow from "@/assets/icons/partner-icons/WebFlow.vue";
+import serviceLinks from "@/data/serviceLinks";
+import Loader from "@/components/ui/loader/Loader.vue";
+import { useLoader } from "@/composables/useLoader";
+const { isLoading } = useLoader();
+console.log(isLoading);
 </script>

@@ -16,10 +16,12 @@ const props = defineProps({
 <template>
   <Card class="w-[304px] h-[250px]">
     <CardHeader>
-      <CardImage :src="props.product?.image" />
+      <CardImage class="w-[32px] h-[32px]" :image="props.product?.icon" />
       <CardTitle>{{ props.product?.title }}</CardTitle>
       <CardDescription>{{ props.product?.description }}</CardDescription>
     </CardHeader>
-    <CardContent>{{ props.product?.content }}</CardContent>
+    <CardContent class="underline cursor-pointer">{{
+      props.product?.content
+    }}</CardContent>
   </Card>
 </template>

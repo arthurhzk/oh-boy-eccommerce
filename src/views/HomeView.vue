@@ -43,7 +43,7 @@
     </HomeContainer>
     <HomeContainer>
       <div class="flex gap-14 my-[120px]">
-        <ProductCard v-for=" in 4" />
+        <ProductCard v-for="shirt in shirts" :product="shirt" />
       </div>
     </HomeContainer>
     <HomeContainer class="space-y-4">
@@ -66,7 +66,7 @@
     </HomeContainer>
     <HomeContainer>
       <div class="flex gap-14 mt-[120px]">
-        <ProductCard v-for=" in 4" />
+        <ProductCard v-for="shirt in shirts" :product="shirt" />
       </div>
     </HomeContainer>
     <div class="flex mx-[64px]">
@@ -92,27 +92,7 @@
         </ul>
       </div>
     </div>
-    <HomeContainer>
-      <div class="flex flex-col items-center space-y-6">
-        <h2
-          class="scroll-m-20 text-3xl font-semibold tracking-tight transition-colors first:mt-0"
-        >
-          Fique por dentro das novidades!
-        </h2>
-        <p class="leading-7 text-center">
-          Assine a nossa newsletter e receba as últimas novidades e ofertas dos
-          nossos produtos!
-        </p>
-        <div class="flex items-center gap-2">
-          <Input type="email" placeholder="Coloque o seu email" />
-          <Button variant="default">Assinar</Button>
-        </div>
-        <p class="text-sm text-muted-foreground">
-          Ao clicar em assinar você concorda com os
-          <span class="underline cursor-pointer">Termos de serviços</span>.
-        </p>
-      </div>
-    </HomeContainer>
+    <Newsletter />
   </section>
 </template>
 
@@ -120,7 +100,11 @@
 import HomeContainer from "@/components/ui/container/HomeContainer.vue";
 import Button from "@/components/ui/button/Button.vue";
 import ProductCard from "@/layout/product-card/ProductCard.vue";
-import Input from "@/components/ui/input/Input.vue";
+import Newsletter from "@/layout/newsletter/Newsletter.vue";
+import { useShirts } from "@/composables/useShirts";
+
+const { shirts } = useShirts();
+console.log(shirts);
 import { ref } from "vue";
 
 const itemList = ref([

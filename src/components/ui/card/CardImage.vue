@@ -6,10 +6,14 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  image: {
+    type: String,
+    default: "",
+  },
 });
 </script>
 
 <template>
-  <img v-bind="$attrs" :class="cn('', props.class)" />
+  <img :src="props.image" :class="cn('', props.class)" />
   <slot></slot>
 </template>

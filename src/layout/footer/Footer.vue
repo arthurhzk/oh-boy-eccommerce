@@ -10,7 +10,7 @@
       </ul>
       <div class="h-[1px] w-full bg-gray-300"></div>
     </div>
-    <p class="leading-7">2024 Oh Boy! Todos os direitos reservados.</p>
+    <p class="leading-7">2024 OH, BOY! Todos os direitos reservados.</p>
   </HomeContainer>
 </template>
 

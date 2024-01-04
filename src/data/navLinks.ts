@@ -1,2 +1,2 @@
-const navlinks = ["Home", "Camisetas", "Calças", "Acessórios"];
+const navlinks: string[] = ["Home", "Camisetas", "Calças", "Acessórios"];
 export default navlinks;
