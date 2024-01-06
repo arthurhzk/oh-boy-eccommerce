@@ -44,6 +44,7 @@ import navLinks from "@/data/navLinks";
 import { RoutePathEnum } from "@/domain/enums/routeEnums";
 import { useUserStore } from "@/stores/users";
 import { onMounted } from "vue";
+
 const store = useUserStore();
 onMounted(() => {
   store.getUser();

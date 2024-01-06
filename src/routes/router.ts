@@ -36,16 +36,30 @@ const router = createRouter({
       path: RoutePathEnum.LOGIN,
       name: RouteNameEnum.LOGIN,
       component: () => import("@/views/LoginView.vue"),
+      meta: {
+        title: "Faça login para continuar",
+      },
     },
     {
       path: RoutePathEnum.REGISTER,
       name: RouteNameEnum.REGISTER,
       component: () => import("@/views/RegisterView.vue"),
+      meta: {
+        title: "Registre-se agora mesmo",
+      },
     },
     {
       path: RoutePathEnum.CATEGORIES,
       name: RouteNameEnum.CATEGORIES,
       component: () => import("@/views/CategoriesView.vue"),
+      meta: {
+        title: "Categorias",
+      },
+    },
+    {
+      path: RoutePathEnum.NOT_FOUND,
+      name: RouteNameEnum.NOT_FOUND,
+      component: () => import("@/views/NotFoundView.vue"),
     },
   ],
 });

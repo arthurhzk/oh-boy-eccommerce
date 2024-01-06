@@ -12,13 +12,13 @@ import Input from "@/components/ui/input/Input.vue";
 import Label from "@/components/ui/label/Label.vue";
 import Loader from "@/components/ui/loader/Loader.vue";
 import { useRegister } from "@/composables/useRegister";
-import { ref } from "vue";
-const isLoading = ref(false);
+import { useLoaderStore } from "@/stores/loader";
+const store = useLoaderStore();
 async function onSubmit(event: Event) {
   event.preventDefault();
-  isLoading.value = true;
+  store.isLoading = true;
   setTimeout(() => {
-    isLoading.value = false;
+    store.isLoading = false;
   }, 3000);
 }
 
@@ -79,7 +79,7 @@ const { state, signUpUser } = useRegister();
         </CardContent>
         <CardFooter>
           <Button @click="signUpUser" class="w-full">
-            Criar conta <Loader class="ml-4" v-show="isLoading" />
+            Criar conta <Loader class="ml-4" v-show="store.isLoading" />
           </Button>
         </CardFooter>
       </Card>

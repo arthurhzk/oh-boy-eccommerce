@@ -1,5 +1,5 @@
 <template>
-  <Loader v-show="isloading" class="flex items-center justify-center" />
+  <Loader v-show="store.isLoading" class="flex items-center justify-center" />
   <HomeContainer class="mt-[120px] mb-[120pb]">
     <div class="mt-24" v-for="item in product">
       <BreadCrumb class="mb-8" :title="item.title" />
@@ -42,20 +42,20 @@ import HomeContainer from "@/components/ui/container/HomeContainer.vue";
 import BreadCrumb from "@/layout/bread-crumb/BreadCrumb.vue";
 import { useFetchProductId } from "@/composables/useFetchProductId";
 import { useRouter } from "vue-router";
-import { onMounted, ref } from "vue";
+import { onMounted } from "vue";
 import InputLabel from "@/layout/input-label/InputLabel.vue";
 import ProductAccordion from "@/layout/product-accordion/ProductAccordion.vue";
 import Newsletter from "@/layout/newsletter/Newsletter.vue";
 import Loader from "@/components/ui/loader/Loader.vue";
+import { useLoaderStore } from "@/stores/loader";
 import AddToaster from "@/layout/add-toaster/AddToaster.vue";
-
+const store = useLoaderStore();
 const router = useRouter();
 const { fetchProductId, product } = useFetchProductId();
 const productId = router.currentRoute.value.params.id;
-const isloading = ref(true);
 onMounted(async () => {
-  isloading.value = true;
+  store.isLoading = true;
   await fetchProductId(productId);
-  isloading.value = false;
+  store.isLoading = false;
 });
 </script>

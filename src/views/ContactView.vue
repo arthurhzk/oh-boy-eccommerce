@@ -26,8 +26,10 @@
         </div>
         <div class="w-1/2">
           <img src="@/assets/minimalism-clothing.webp" alt="" />
-        </div></div
-    ></HomeContainer>
+        </div>
+      </div>
+      ></HomeContainer
+    >
   </section>
 </template>
 
