@@ -4,7 +4,7 @@
       class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
     >
       <li class="inline-flex items-center">
-        <router-link to="/"
+        <router-link :to="RoutePathEnum.HOME"
           ><a
             href="#"
             class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
@@ -76,6 +76,7 @@
 </template>
 
 <script setup lang="ts">
+import { RoutePathEnum } from "@/domain/enums/routeEnums";
 const props = defineProps({
   title: {
     type: String,

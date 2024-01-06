@@ -5,6 +5,7 @@ export enum RoutePathEnum {
   LOGIN = "/login",
   PRODUCTID = "/product/:id",
   REGISTER = "/register",
+  CATEGORIES = "/categories",
 }
 
 export enum RouteNameEnum {
@@ -14,4 +15,5 @@ export enum RouteNameEnum {
   LOGIN = "Login",
   PRODUCTID = "Product",
   REGISTER = "Register",
+  CATEGORIES = "Categories",
 }

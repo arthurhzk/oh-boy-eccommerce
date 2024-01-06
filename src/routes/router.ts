@@ -42,6 +42,11 @@ const router = createRouter({
       name: RouteNameEnum.REGISTER,
       component: () => import("@/views/RegisterView.vue"),
     },
+    {
+      path: RoutePathEnum.CATEGORIES,
+      name: RouteNameEnum.CATEGORIES,
+      component: () => import("@/views/CategoriesView.vue"),
+    },
   ],
 });
 router.beforeEach((to, _from, next) => {

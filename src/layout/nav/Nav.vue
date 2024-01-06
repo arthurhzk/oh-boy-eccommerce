@@ -1,7 +1,9 @@
 <template>
   <HomeContainer>
     <div class="flex items-center justify-between gap-8">
-      <img src="@/assets/logo.png" />
+      <router-link :to="RoutePathEnum.HOME">
+        <img src="@/assets/logo.png"
+      /></router-link>
       <div class="flex items-center gap-6">
         <div v-for="link in navLinks">
           <router-link
@@ -45,6 +47,5 @@ import { onMounted } from "vue";
 const store = useUserStore();
 onMounted(() => {
   store.getUser();
-  console.log(store.emailCredentials);
 });
 </script>
