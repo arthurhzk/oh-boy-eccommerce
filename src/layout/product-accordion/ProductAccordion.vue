@@ -4,16 +4,10 @@ import AccordionContent from "@/components/ui/accordion/AccordionContent.vue";
 import AccordionItem from "@/components/ui/accordion/AccordionItem.vue";
 import AccordionTrigger from "@/components/ui/accordion/AccordionTrigger.vue";
 import accordionItems from "@/data/accordionItems";
-const defaultValue = "item-1";
 </script>
 
 <template>
-  <Accordion
-    type="single"
-    class="w-full"
-    collapsible
-    :default-value="defaultValue"
-  >
+  <Accordion type="single" class="w-full" collapsible>
     <AccordionItem
       v-for="item in accordionItems"
       :key="item.value"

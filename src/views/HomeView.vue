@@ -43,7 +43,7 @@
     </HomeContainer>
     <HomeContainer>
       <div class="flex gap-14 my-[120px]">
-        <ProductCard v-for="shirt in shirts" :product="shirt" />
+        <ProductCard v-for="shirt in shirts" :product="shirt" :key="shirt.id" />
       </div>
     </HomeContainer>
     <HomeContainer class="space-y-4">
@@ -101,21 +101,7 @@ import HomeContainer from "@/components/ui/container/HomeContainer.vue";
 import Button from "@/components/ui/button/Button.vue";
 import ProductCard from "@/layout/product-card/ProductCard.vue";
 import Newsletter from "@/layout/newsletter/Newsletter.vue";
+import itemList from "@/data/itemList";
 import { useShirts } from "@/composables/useShirts";
-
 const { shirts } = useShirts();
-console.log(shirts);
-import { ref } from "vue";
-
-const itemList = ref([
-  {
-    text: "Do trabalho para a festa: Versatilidade é a chave. Nossas roupas vão do escritório para a festa sem perder estilo.",
-  },
-  {
-    text: "Em um mundo cheio de cores, preto e branco nunca sai de moda. Explore nossa coleção elegante e atemporal.",
-  },
-  {
-    text: "Estilo sem esforço: Porque o verdadeiro estilo é aquele que parece sem esforço. Encontre sua peça-chave conosco.",
-  },
-]);
 </script>

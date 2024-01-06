@@ -11,6 +11,7 @@ export const useUserStore = defineStore("users", () => {
   const isLoggedIn = ref(false);
   const state = ref(initialState);
   const router = useRouter();
+  const emailCredentials = ref();
 
   const signInUser = async () => {
     try {
@@ -26,6 +27,15 @@ export const useUserStore = defineStore("users", () => {
     }
   };
 
+  const getUser = async () => {
+    try {
+      const response = await supabase.auth.getUser();
+      emailCredentials.value = response.data.user?.email;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const signOutuser = async () => {
     try {
       await supabase.auth.signOut();
@@ -35,5 +45,12 @@ export const useUserStore = defineStore("users", () => {
     }
   };
 
-  return { state, signInUser, isLoggedIn, signOutuser };
+  return {
+    state,
+    isLoggedIn,
+    emailCredentials,
+    signOutuser,
+    getUser,
+    signInUser,
+  };
 });

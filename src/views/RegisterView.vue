@@ -17,7 +17,6 @@ const isLoading = ref(false);
 async function onSubmit(event: Event) {
   event.preventDefault();
   isLoading.value = true;
-
   setTimeout(() => {
     isLoading.value = false;
   }, 3000);
@@ -80,7 +79,7 @@ const { state, signUpUser } = useRegister();
         </CardContent>
         <CardFooter>
           <Button @click="signUpUser" class="w-full">
-            Criar conta <Loader class="ml-4" v-if="isLoading" />
+            Criar conta <Loader class="ml-4" v-show="isLoading" />
           </Button>
         </CardFooter>
       </Card>
