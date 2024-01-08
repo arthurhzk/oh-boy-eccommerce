@@ -7,6 +7,7 @@ export enum RoutePathEnum {
   REGISTER = "/register",
   CATEGORIES = "/categories",
   NOT_FOUND = "/:pathMatch(.*)*",
+  CART = "/cart",
 }
 
 export enum RouteNameEnum {
@@ -18,4 +19,5 @@ export enum RouteNameEnum {
   REGISTER = "Register",
   CATEGORIES = "Categories",
   NOT_FOUND = "NotFound",
+  CART = "Cart",
 }

@@ -60,6 +60,17 @@ const router = createRouter({
       path: RoutePathEnum.NOT_FOUND,
       name: RouteNameEnum.NOT_FOUND,
       component: () => import("@/views/NotFoundView.vue"),
+      meta: {
+        title: "Página não encontrada",
+      },
+    },
+    {
+      path: RoutePathEnum.CART,
+      name: RouteNameEnum.CART,
+      component: () => import("@/views/CartView.vue"),
+      meta: {
+        title: "Carrinho",
+      },
     },
   ],
 });

@@ -20,8 +20,13 @@
             <p class="leading-7 [&:not(:first-child)]:mt-6">
               {{ item.description }}
             </p>
-            <InputLabel label="Quantidade" type="number" />
+            <InputLabel
+              v-model="cartStore.quantity"
+              label="Quantidade"
+              type="number"
+            />
             <AddToaster
+              @click="cartStore.addToCart(item)"
               variant="default"
               text="Comprar"
               description="Produto adicionado ao carrinho!"
@@ -33,7 +38,6 @@
       </div>
     </div>
   </HomeContainer>
-
   <Newsletter class="mt-[120px]" />
 </template>
 
@@ -49,10 +53,12 @@ import Newsletter from "@/layout/newsletter/Newsletter.vue";
 import Loader from "@/components/ui/loader/Loader.vue";
 import { useLoaderStore } from "@/stores/loader";
 import AddToaster from "@/layout/add-toaster/AddToaster.vue";
+import { useCartStore } from "@/stores/cart";
 const store = useLoaderStore();
 const router = useRouter();
 const { fetchProductId, product } = useFetchProductId();
 const productId = router.currentRoute.value.params.id;
+const cartStore = useCartStore();
 onMounted(async () => {
   store.isLoading = true;
   await fetchProductId(productId);

@@ -5,5 +5,6 @@ const navlinks: NavType[] = [
   { name: "Sobre", path: RoutePathEnum.ABOUT },
   { name: "Contato", path: RoutePathEnum.CONTACT },
   { name: "Categorias", path: RoutePathEnum.CATEGORIES },
+  { name: "Carrinho", path: RoutePathEnum.CART },
 ];
 export default navlinks;
