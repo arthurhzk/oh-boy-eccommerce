@@ -20,11 +20,7 @@
             <p class="leading-7 [&:not(:first-child)]:mt-6">
               {{ item.description }}
             </p>
-            <InputLabel
-              v-model="cartStore.quantity"
-              label="Quantidade"
-              type="number"
-            />
+
             <AddToaster
               @click="cartStore.addToCart(item)"
               variant="default"
@@ -47,7 +43,6 @@ import BreadCrumb from "@/layout/bread-crumb/BreadCrumb.vue";
 import { useFetchProductId } from "@/composables/useFetchProductId";
 import { useRouter } from "vue-router";
 import { onMounted } from "vue";
-import InputLabel from "@/layout/input-label/InputLabel.vue";
 import ProductAccordion from "@/layout/product-accordion/ProductAccordion.vue";
 import Newsletter from "@/layout/newsletter/Newsletter.vue";
 import Loader from "@/components/ui/loader/Loader.vue";

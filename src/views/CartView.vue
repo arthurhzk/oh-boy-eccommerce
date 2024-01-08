@@ -24,12 +24,27 @@
           <TableCell class="text-right">
             R$ {{ product.price.toFixed(2) }}
           </TableCell>
-          <Button @click="store.removeFromCart(product)" variant="destructive"
-            >Deletar</Button
+          <Button
+            class="mt-1"
+            @click="store.removeFromCart(product)"
+            variant="destructive"
+            >Remover</Button
           >
         </TableRow>
       </TableBody>
     </Table>
+    <div class="flex items-center justify-end gap-8">
+      <p class="leading-7 font-semibold" v-show="store.cartItems.length > 0">
+        Valor total de: R$ {{ store.totalAmount.toFixed(2) }}
+      </p>
+      <Button
+        :class="{
+          'cursor-not-allowed disabled:': store.cartItems.length === 0,
+        }"
+        variant="outline"
+        >Finalizar Compra</Button
+      >
+    </div>
   </HomeContainer>
 </template>
 

@@ -5,7 +5,7 @@ export function useFetchProductId() {
   const product = ref<any[] | null>([]);
   const fetchProductId = async (id: string | string[]) => {
     try {
-      const response = await supabase.from("t-shirts").select("*").eq("id", id);
+      const response = await supabase.from("products").select("*").eq("id", id);
       product.value = response.data;
     } catch (error) {
       console.log(error);
