@@ -2,13 +2,14 @@
   <section>
     <div class="flex p-4">
       <HomeContainer class="space-y-6 flex items-center justify-center">
-        <div class="flex flex-col items-center justify-center space-y-6">
+        <div class="flex flex-col justify-center space-y-6">
           <h1
             class="scroll-m-20 text-4xl font-semibold tracking-tight lg:text-5xl"
           >
             Elegância Intemporal
           </h1>
-          <p class="leading-7">
+
+          <p class="leading-7 text-center lg:text-start">
             Explore a simplicidade em nossa loja minimalista, especializada em
             camisetas básicas nas cores atemporais: branco e preto. Desfrute da
             versatilidade elegante dessas peças essenciais, perfeitas para

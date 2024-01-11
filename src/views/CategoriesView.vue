@@ -14,7 +14,7 @@
         v-show="store.isLoading"
         class="flex items-center justify-center"
       />
-      <div class="grid grid-cols-2 gap-6">
+      <div class="flex flex-col md:grid md:grid-cols-2 gap-6">
         <CategoriesCard
           v-for="category in categories"
           :key="category.id"

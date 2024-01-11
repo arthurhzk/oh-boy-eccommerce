@@ -25,6 +25,7 @@ Para começar com o projeto, siga estas etapas:
 - Vite
 - Tailwind CSS
 - Supabase
+- Shadcn Vue
 
 ## Configuração Recomendada do IDE
 

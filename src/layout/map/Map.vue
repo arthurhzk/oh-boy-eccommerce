@@ -1,5 +1,5 @@
 <template>
-  <div ref="mapDiv" style="width: 60%; height: 100vh"></div>
+  <div ref="mapDiv" style="width: 100%; height: 100vh"></div>
 </template>
 
 <script lang="ts" setup>

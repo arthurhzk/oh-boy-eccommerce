@@ -1,6 +1,8 @@
 <template>
   <section>
-    <div class="flex p-4">
+    <div
+      class="flex flex-col items-center justify-center md:flex md:flex-row p-4"
+    >
       <HomeContainer class="w-1/2 h-[900px] flex flex-col space-y-6">
         <h1
           class="scroll-m-20 text-4xl font-semibold tracking-tight lg:text-5xl"
@@ -28,22 +30,25 @@
       <Loader v-if="isLoading" />
       <Map v-else></Map>
     </div>
+
     <HomeContainer>
       <div class="flex items-center justify-between">
-        <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
-          Nossa loja possui os <br />
-          melhores tecidos do mercado
-        </h4>
-        <div class="flex items-center gap-6">
-          <RelumeIcon class="w-[100px]" />
-          <WebFlow class="w-[100px]" />
-          <RelumeIcon class="w-[100px]" />
-          <WebFlow class="w-[100px]" />
+        <div class="flex flex-col md:flex md:justify-between">
+          <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
+            Nossa loja possui os <br />
+            melhores tecidos do mercado
+          </h4>
+          <div class="flex items-center gap-6">
+            <RelumeIcon class="w-[100px]" />
+            <WebFlow class="w-[100px]" />
+            <RelumeIcon class="w-[100px]" />
+            <WebFlow class="w-[100px]" />
+          </div>
         </div>
       </div>
     </HomeContainer>
     <HomeContainer class="mt-[120px] mb-[120px]">
-      <div class="flex justify-around">
+      <div class="grid grid-cols-2 md:flex md:justify-around">
         <ServiceCard
           v-for="(product, index) in serviceLinks"
           :key="index"

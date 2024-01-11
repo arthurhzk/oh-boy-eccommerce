@@ -2,9 +2,9 @@
   <section>
     <HomeContainer class="mt-[112px] mb-[112px]"
       ><div class="flex items-center justify-between gap-20">
-        <div class="w-1/2 space-y-4">
+        <div class="space-y-4 flex flex-col justify-center lg:w-1/2">
           <h1
-            class="scroll-m-20 text-4xl font-semibold tracking-tight lg:text-5xl"
+            class="scroll-m-20 text-4xl font-semibold tracking-tight text-center lg:text-5xl"
           >
             Sobre a Marca OH BOY!
           </h1>
@@ -25,7 +25,11 @@
           </p>
         </div>
         <div class="w-1/2">
-          <img src="@/assets/minimalism-clothing.webp" alt="" />
+          <img
+            class="hidden lg:block"
+            src="@/assets/minimalism-clothing.webp"
+            alt=""
+          />
         </div>
       </div>
     </HomeContainer>

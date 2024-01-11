@@ -3,9 +3,14 @@
   <HomeContainer class="mt-[120px] mb-[120pb]">
     <div class="mt-24" v-for="item in product">
       <BreadCrumb class="mb-8" :title="item.title" />
+
       <div class="flex">
         <div class="w-1/2">
-          <img class="w-[380px] h-[380px] ml-[40px]" :src="item.image" alt="" />
+          <img
+            class="w-[380px] h-[380px] md:ml-[40px]"
+            :src="item.image"
+            alt=""
+          />
         </div>
         <div class="w-1/2 flex items-start justify-start">
           <div class="space-y-2 flex flex-col">
