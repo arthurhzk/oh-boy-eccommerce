@@ -1,18 +1,39 @@
-# Vue 3 + TypeScript + Vite
+# Loja de Roupas Minimalista - Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Esta é uma loja de roupas minimalista construída com Vue 3, TypeScript e Vite. O site é projetado com foco na simplicidade e elegância, oferecendo uma seleção de camisetas básicas em cores atemporais: preto e branco.
 
-## Recommended IDE Setup
+## Recursos
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Navegue por uma seleção de produtos
+- Visualização detalhada de cada produto
+- Design responsivo para visualização ideal em qualquer dispositivo
+- Autenticação e Login utilizando Supabase
 
-## Type Support For `.vue` Imports in TS
+## Configuração do Projeto
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+Para começar com o projeto, siga estas etapas:
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+1. Clone o repositório: `git clone https://github.com/seunome/seurepositorio.git`
+2. Navegue até o diretório do projeto: `cd seurepositorio`
+3. Instale as dependências: `npm install`
+4. Inicie o servidor de desenvolvimento: `npm run dev`
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Construído Com
+
+- Vue 3
+- TypeScript
+- Vite
+- Tailwind CSS
+- Supabase
+
+## Configuração Recomendada do IDE
+
+- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (e desative o Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+
+## Contribuições
+
+Contribuições são bem-vindas! Por favor, leia nossas [diretrizes de contribuição](CONTRIBUTING.md) para começar.
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.

@@ -28,8 +28,7 @@
           <img src="@/assets/minimalism-clothing.webp" alt="" />
         </div>
       </div>
-      ></HomeContainer
-    >
+    </HomeContainer>
   </section>
 </template>
 

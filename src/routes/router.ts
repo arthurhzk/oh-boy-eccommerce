@@ -49,6 +49,11 @@ const router = createRouter({
       },
     },
     {
+      path: RoutePathEnum.CATEGORIESID,
+      name: RouteNameEnum.CATEGORIESID,
+      component: () => import("@/views/SingleCategoriesView.vue"),
+    },
+    {
       path: RoutePathEnum.CATEGORIES,
       name: RouteNameEnum.CATEGORIES,
       component: () => import("@/views/CategoriesView.vue"),

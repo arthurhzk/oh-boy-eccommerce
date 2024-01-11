@@ -6,6 +6,8 @@ export enum RoutePathEnum {
   PRODUCTID = "/product/:id",
   REGISTER = "/register",
   CATEGORIES = "/categories",
+  CATEGORIESID = "/categories/:category",
+  PRODUCTS = "categories/products",
   NOT_FOUND = "/:pathMatch(.*)*",
   CART = "/cart",
 }
@@ -18,6 +20,8 @@ export enum RouteNameEnum {
   PRODUCTID = "Product",
   REGISTER = "Register",
   CATEGORIES = "Categories",
+  CATEGORIESID = "CategoriesID",
+  ACCESSORIES = "Accessories",
   NOT_FOUND = "NotFound",
   CART = "Cart",
 }

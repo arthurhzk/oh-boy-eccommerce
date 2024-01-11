@@ -1,10 +1,14 @@
 <template>
   <HomeContainer>
-    <div class="flex items-center justify-between gap-8">
+    <div
+      class="flex flex-col md:flex md:flex-col lg:flex lg:flex-row items-center justify-between gap-8"
+    >
       <router-link :to="RoutePathEnum.HOME">
         <img src="@/assets/logo.png"
       /></router-link>
-      <div class="flex items-center gap-6">
+      <div
+        class="grid grid-rows-2 grid-cols-2 md:flex md:flex-row items-center :items-center gap-6"
+      >
         <div v-for="link in navLinks">
           <router-link
             :to="link.path || '/'"
